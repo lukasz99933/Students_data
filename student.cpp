@@ -16,6 +16,19 @@ bool compareBynumberindex(const Student &a,const Student &b)
 	return a.number_index < b.number_index;
 }
 
+void remove(int a,vector<Student> &b)
+{
+	int i=0;
+	if(i<b.size())
+	{
+		do
+		{
+			i++;
+		}while(b[i].number_index == a);
+		b.erase(b.begin()+i);
+	}
+}
+
 int main()
 {
 	vector<Student> data;
@@ -38,6 +51,7 @@ int main()
 	cout << data[0].forename << endl;
 	cout << data[1].forename << endl;
 	cout << data[2].forename << endl;
+	remove(226555,data);
 	return 0;
 
 }
